@@ -1,8 +1,35 @@
 {% extends "base.html" %}
-
+{% load static %}
 
 {% block content %}
-    <h1>{{article.title}}</h1>
-    <h6>{{article.author}}</h6>
-    <p>{{article.content}}</p>
+
+<section class="main-section">
+    <div class="bg-opacity">
+        <div class="content">
+             <img src="{% static 'potato-favicon.png'%}" class="potato">
+    <h1 class="head"> The Reading Potato </h1>
+    <span class="scroll-btn">
+    <a href="#down">
+        <span class="mouse">
+            <span>
+            </span>
+        </span>
+    </a>
+  <p class="click">click me</p>
+
+</span>
+
+      </div>
+    </div>
+
+</section>
+
+<section id="down" class="details-section">
+<div id="details" class="container">
+    <h1 class="title-center">{{article.title}}</h1>
+    <p id="name" class="title-center">By: <i> {{article.author}} <i> </p>
+    <p>{{article.content}}{{article.content}}</p>
+</div>
+
+</section>    
 {% endblock content%}

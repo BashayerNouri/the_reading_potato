@@ -1,15 +1,51 @@
 {% extends "base.html" %}
-
+{% load static %}
 
 {% block content %}
-    <ul>
+
+<section class="main-section">
+    <div class="bg-opacity">
+        <div class="content">
+             <img src="{% static 'potato-favicon.png'%}" class="potato">
+    <h1 class="head"> The Reading Potato </h1>
+    <span class="scroll-btn">
+    <a href="#list-container">
+        <span class="mouse">
+            <span>
+            </span>
+        </span>
+    </a>
+  <p class="click">click me</p>
+
+</span>
+
+        </div>
+    </div>
+
+</section>
+
+<section id="list-section">
+
+<div id="list-container" class="container">
+    <ul class="list-group">
         {% for article in articles %}
-            <li>
+        <li class="list-group-item">
+            <ul class="list-inline">
+                <li id="author" class="list-inline-item"><i id="icon" class="far fa-user"></i>{{article.author|title}}</li>
+                <li id="created" class="list-inline-item"><i id="icon" class="far fa-calendar-alt"></i>{{article.created_on|date:'d-M-Y'}}</li> 
+            </ul>
                 <a href="{% url 'article-details' article.id %}">
-                    <h1>{{article.title}}</h1>
+                    <h4 class="title">{{article.title|title}}</h4>
                 </a>
-                <p>{{article.created_on}}</p>
+                <p id="content">{{article.content|truncatechars:250}}</p>
             </li>
         {% endfor %}
+        {% include './paginator.html' with page=articles %}
+
     </ul>
+</div>
+</section>
+
 {% endblock content%}
+
+
