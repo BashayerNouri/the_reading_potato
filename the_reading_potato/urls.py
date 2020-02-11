@@ -17,11 +17,12 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from main import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('fontawesome/', include("fontawesome.urls")),
     path('articles/', views.articles_list, name="articles-list"),
     path('articles/<int:article_id>/', views.article_details, name="article-details"),
 ]
