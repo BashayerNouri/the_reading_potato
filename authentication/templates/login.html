@@ -8,12 +8,12 @@
             <button type="button" class="btn btn-dark">Back To Articles</button>
         </a>
     </div>
-	<div id="register" class="container p-5">
-    <form action="{% url 'register' %}" method="POST">
+	<div id="login" class="container p-5">
+    <form action="{% url 'login' %}" method="POST">
         {% csrf_token %}
         {{form|crispy}}
-         <p>Have an account? <a href="{% url 'login' %}"> Login now! </a></p>
-        <input type="submit" value="Register" class="btn btn-primary btn-sm btn-block">
+        <p>Don't have an account? <a href="{% url 'register' %}"> Register now! </a></p>
+        <input type="submit" value="Login" class="btn btn-primary btn-sm btn-block">
     </form>
     </div>
 </section>

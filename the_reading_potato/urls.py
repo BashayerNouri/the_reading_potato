@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('fontawesome/', include("fontawesome.urls")),
     path('register/', auth_views.register, name="register"),
+    path('login/', auth_views.login_view , name="login"),
     path('articles/', views.articles_list, name="articles-list"),
     path('articles/<int:article_id>/', views.article_details, name="article-details"),
     path('create/', views.create_article, name="create-article"),
