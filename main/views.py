@@ -6,7 +6,7 @@ from .models import Article
 # Create your views here.
 
 def articles_list(request):
-    article = Article.objects.all().order_by('-created_on')
+    article = Article.objects.all()
     paginator = Paginator(article, 5) # Shows up to 5 articles per page
     page = request.GET.get('page')
     try:
@@ -58,5 +58,9 @@ def edit_article(request, article_id):
 
     context = {"form":form, "article":article}
     return render(request, 'edit_article.html', context)
+
+
+def my_articles_list(request):
+    return render(request, "my_articles_list.html")
 
     
