@@ -1,3 +1,6 @@
+body {
+	background-color: #f8f8f8 !important;
+}
 
 @-webkit-keyframes ani-mouse {
 	0% {
@@ -211,6 +214,27 @@ a:hover{
 	word-spacing: 0px;
 	color: #666;
     margin-left: 2px;
+}
+
+#create {
+	text-align: left;
+}
+
+.back {
+	padding-bottom: 10px;
+	position: absolute;
+	top: 100%;
+}
+
+#back {
+	text-align: center;
+}
+
+
+#btn-create{
+    position: absolute;
+    top: 100%;
+
 }
 
 #icon {

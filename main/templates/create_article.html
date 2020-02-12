@@ -2,7 +2,12 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<section class="bg-light pt-3 pb-5" id="down">
+<section class="pt-3 pb-5" id="down">
+    <div id="back" class="container">
+        <a href="{% url 'articles-list' %}">
+            <button type="button" class="btn btn-dark">Back To Articles</button>
+        </a>
+    </div>
 	<div class="container p-5">
     <form action="{% url 'create-article' %}" method="POST">
         {% csrf_token %}
