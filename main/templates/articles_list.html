@@ -4,23 +4,13 @@
 
 <section id="down">
     <div id="create" class="container">
+        <h3> Create A New Article Now!</h3>
         <a href="{% url 'create-article' %}">
             <button type="button" id="btn-create" class="btn btn-dark">Create New Article</button>
         </a>
     </div>
 
 <div class="container" id="list-container">
-
-{# --------------------------------------- #}
-{# Just for test #}
-    <div id="create" class="container">
-        <a href="{% url 'logout' %}">
-            <button type="button" class="btn btn-danger">Logout</button>
-        </a>
-    </div>
-{# --------------------------------------- #}
-
-
     <ul class="list-group">
         {% for article in articles %}
         <li class="list-group-item">
@@ -35,7 +25,6 @@
             </li>
         {% endfor %}
         {% include 'paginator.html' with page=articles %}
-
     </ul>
 </div>
 </section>

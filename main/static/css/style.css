@@ -246,7 +246,13 @@ a:hover {
 }
 
 #create {
+	position: relative;
+	bottom: 80px;
 	text-align: center;
+	background-color: black;
+	padding: 30px;
+	color: white;
+	opacity: 0.8;
 }
 
 .back {
@@ -267,11 +273,6 @@ a:hover {
 	padding-bottom: 20px;
 }
 
-#btn-create {
-    position: absolute;
-    top: 100%;
-}
-
 #icon {
 	margin-right: 5px;
 }
@@ -283,7 +284,7 @@ a:hover {
 }
 
 #list-container{
-	padding: 100px;
+	padding-bottom: 100px;
 }
 
 
