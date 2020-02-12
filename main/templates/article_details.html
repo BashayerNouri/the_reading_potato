@@ -8,6 +8,11 @@
             <button type="button" class="btn btn-dark">Back To Articles</button>
         </a>
     </div>
+	<div id="edit" class="container edit">
+        <a href="{% url 'edit-article' article.id %}">
+            <button type="button" class="btn btn-warning">Edit This Article</button>
+        </a>
+    </div>
     <div id="details" class="container">
     	<h1 class="title-center">{{article.title}}</h1>
     	<p id="name" class="title-center">By: <i> {{article.author}} <i> </p>

@@ -20,6 +20,7 @@ body {
 	top: 29%;
 	}
 }
+
 @-moz-keyframes ani-mouse {
 	0% {
 	opacity: 1;
@@ -38,6 +39,7 @@ body {
 	top: 29%;
 	}
 }
+
 @keyframes ani-mouse {
 	0% {
 	opacity: 1;
@@ -56,6 +58,7 @@ body {
 	top: 29%;
 	}
 }
+
  .scroll-btn {
 	display: block;
 	position: absolute;
@@ -122,16 +125,16 @@ body {
 	animation: ani-mouse 2.5s linear infinite;
 }
 
-#details{
+#details {
 	border: 1px black solid;
 	padding: 100px;
-
 }
 
-.details-section{
+.details-section {
 	padding: 100px;
 }
-.title{
+
+.title {
 	text-align: left;
 }
 
@@ -143,18 +146,16 @@ body {
 	background-color: #f8f8f8;
 }
 
-
 #content {
 	color: #666;
 }
 
-
-.bg-opacity{
+.bg-opacity {
     position: relative;
     background-color: #000;
 }
 
-.bg-opacity::before{
+.bg-opacity::before {
     content: ' ';
     display: block;
     position: absolute;
@@ -168,7 +169,7 @@ body {
     background-size: cover;
 }
 
-.content{
+.content {
   position: relative;
   width: 100%;
   height: 600px;
@@ -177,7 +178,7 @@ body {
   padding: 200px;
 }
 
-a:hover{
+a:hover {
 	text-decoration: none !important;
 }
 
@@ -185,13 +186,12 @@ a:hover{
 	padding-top: 40px;
 }
 
-
 .title:hover {
   color: blue;
   text-decoration: none;
 }
 
-.footer{
+.footer {
 	font-family: "Open Sans", sans-serif;
 	padding: 30px;
 	text-align: center;
@@ -203,7 +203,6 @@ a:hover{
 .year {
 	color: #999;
 }
-
 
 #author, #created {
 	font-family: "Open Sans", sans-serif;
@@ -217,24 +216,26 @@ a:hover{
 }
 
 #create {
-	text-align: left;
+	text-align: center;
 }
 
-.back {
+.back, .edit {
 	padding-bottom: 10px;
 	position: absolute;
 	top: 100%;
+}
+
+#edit {
+	text-align: right;
 }
 
 #back {
 	text-align: center;
 }
 
-
-#btn-create{
+#btn-create {
     position: absolute;
     top: 100%;
-
 }
 
 #icon {
