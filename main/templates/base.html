@@ -23,11 +23,32 @@
 
 <body>
 
+<section class="main-section">
+    <div class="bg-opacity">
+        <div class="content">
+             <img src="{% static 'potato-favicon.png'%}" class="potato">
+    <h1 class="head"> The Reading Potato </h1>
+    <span class="scroll-btn">
+    <a href="#down">
+        <span class="mouse">
+            <span>
+            </span>
+        </span>
+    </a>
+  <p class="click">click me</p>
+
+</span>
+
+      </div>
+    </div>
+</section>
+
     {% block content %}
 
     {% endblock content%}
 
-{% include './footer.html' %}
+{% include 'footer.html' %}
+
 
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

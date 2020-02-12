@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<section class="bg-light pt-3 pb-5" id="down">
+	<div class="container p-5">
+    <form action="{% url 'create-article' %}" method="POST">
+        {% csrf_token %}
+        {{form|crispy}}
+        <input type="submit" value="Create" class="btn btn-primary btn-sm btn-block">
+    </form>
+    </div>
+</section>
+{% endblock content %}
