@@ -127,11 +127,16 @@ body {
 
 #details {
 	border: 1px black solid;
-	padding: 100px;
+	padding: 50px;
+	background-color: white;
 }
 
 .details-section {
-	padding: 100px;
+	padding: 80px;
+}
+
+.title-details{
+	color: blue;
 }
 
 .title {
@@ -140,6 +145,7 @@ body {
 
 #name {
 	font-size: 20px;
+	color: #3333FF;
 }
 
 .list-section, #list-group-item, .details-section {
@@ -219,7 +225,7 @@ a:hover {
 	text-align: center;
 }
 
-.back, .edit {
+.back {
 	padding-bottom: 10px;
 	position: absolute;
 	top: 100%;
@@ -231,6 +237,10 @@ a:hover {
 
 #back {
 	text-align: center;
+}
+
+#back-details {
+	padding-bottom: 20px;
 }
 
 #btn-create {

@@ -3,20 +3,28 @@
 {% block content %}
 
 <section id="down" class="details-section">
-	<div id="back" class="container back">
-        <a href="{% url 'articles-list' %}">
-            <button type="button" class="btn btn-dark">Back To Articles</button>
-        </a>
-    </div>
-	<div id="edit" class="container edit">
-        <a href="{% url 'edit-article' article.id %}">
-            <button type="button" class="btn btn-warning">Edit This Article</button>
-        </a>
-    </div>
+	<div class="row">
+		<div class="col">
+			<div id="back-details" class="container">
+				<a href="{% url 'articles-list' %}">
+					<button type="button" class="btn btn-dark">Back To Articles</button>
+				</a>
+			</div>		
+		</div>
+
+		<div class="col">
+			<div id="edit" class="container">
+				<a href="{% url 'edit-article' article.id %}">
+					<button type="button" class="btn btn-warning">Edit This Article</button>
+				</a>
+			</div>		
+		</div>
+	</div>
+
     <div id="details" class="container">
-    	<h1 class="title-center">{{article.title}}</h1>
-    	<p id="name" class="title-center">By: <i> {{article.author}} <i> </p>
-    		<p>{{article.content}}{{article.content}}</p>
+    	<h1 class="title-details">{{article.title}}</h1>
+    	<p id="name" class="title-center"><i id="icon" class="far fa-user"></i>{{article.author|title}} </i> </p>
+    	<p>{{article.content}}</p>
     	</div>
 
 </section>    
