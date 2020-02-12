@@ -1,9 +1,13 @@
 {% extends "base.html" %}
-{% load static %}
 
 {% block content %}
 
 <section id="down">
+    <div id="create" class="container">
+        <a href="{% url 'create-article' %}">
+            <button type="button" id="btn-create" class="btn btn-dark">Create New Article</button>
+        </a>
+    </div>
 <div class="container" id="list-container">
     <ul class="list-group">
         {% for article in articles %}

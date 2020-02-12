@@ -1,14 +1,18 @@
 {% extends "base.html" %}
-{% load static %}
 
 {% block content %}
 
 <section id="down" class="details-section">
-<div id="details" class="container">
-    <h1 class="title-center">{{article.title}}</h1>
-    <p id="name" class="title-center">By: <i> {{article.author}} <i> </p>
-    <p>{{article.content}}{{article.content}}</p>
-</div>
+	<div id="back" class="container back">
+        <a href="{% url 'articles-list' %}">
+            <button type="button" class="btn btn-dark">Back To Articles</button>
+        </a>
+    </div>
+    <div id="details" class="container">
+    	<h1 class="title-center">{{article.title}}</h1>
+    	<p id="name" class="title-center">By: <i> {{article.author}} <i> </p>
+    		<p>{{article.content}}{{article.content}}</p>
+    	</div>
 
 </section>    
 
