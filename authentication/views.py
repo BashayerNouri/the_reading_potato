@@ -5,6 +5,9 @@ from .forms import UserLogin, UserRegister
 # Create your views here.
 
 def register(request):
+	if request.user.is_authenticated:
+		return redirect('articles-list')
+
 	form = UserRegister()
 	if request.method == 'POST':
 		form = UserRegister(request.POST)
@@ -21,6 +24,9 @@ def register(request):
 
 
 def login_view(request):
+	if request.user.is_authenticated:
+		return redirect('articles-list')
+
 	form = UserLogin()
 	if request.method == 'POST':
 		form = UserLogin(request.POST)
@@ -40,6 +46,9 @@ def login_view(request):
 
 
 def logout_view(request):
+	if request.user.is_anonymous:
+		return redirect('login')
+
 	logout(request)
 	return redirect('articles-list')
 
