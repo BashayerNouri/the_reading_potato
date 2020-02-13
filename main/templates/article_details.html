@@ -20,6 +20,15 @@
 			</div>		
 		</div>
 	</div>
+{% elif request.user.is_authenticated %}
+		<div class="col">
+			<div id="contribute" class="container">
+				<a href="{% url 'contribute-to-article' article.id %}">
+					<button type="button" class="btn btn-danger">Contribute</button>
+				</a>
+			</div>		
+		</div>
+	</div>
 {% endif %}
     <div id="details" class="container">
     	<h1 class="title-details">{{article.title}}</h1>

@@ -9,10 +9,10 @@
         </a>
     </div>
 	<div class="container p-5">
-    <form action="{% url 'edit-article' article.id %}" method="POST">
+    <form action="{% url 'contribute-to-article' article.id %}" method="POST">
         {% csrf_token %}
         {{form|crispy}}
-        <input type="submit" value="Edit" class="btn btn-primary btn-sm btn-block">
+        <input type="submit" value="Contribute" class="btn btn-primary btn-sm btn-block">
     </form>
     </div>
 </section>
