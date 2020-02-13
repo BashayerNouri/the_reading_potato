@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="pt-3 pb-5" id="down">
+<div class="container">
+    {% for line in comparison %}
+    	{% if not line|make_list|first == '?' %}
+    		{% if line|make_list|first == '-' %}
+    			<p class="red-background">
+    		{% elif line|make_list|first == '+' %}
+    			<p class="green-background">
+    		{% endif %}
+    		{{line}}</p>
+    	{% endif %}
+    {% endfor %}
+</div>
+</section>
+{% endblock content%}
