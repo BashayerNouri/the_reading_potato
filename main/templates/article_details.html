@@ -11,7 +11,7 @@
 				</a>
 			</div>		
 		</div>
-
+{% if request.user.is_authenticated and request.user == article.author %}
 		<div class="col">
 			<div id="edit" class="container">
 				<a href="{% url 'edit-article' article.id %}">
@@ -20,7 +20,7 @@
 			</div>		
 		</div>
 	</div>
-
+{% endif %}
     <div id="details" class="container">
     	<h1 class="title-details">{{article.title}}</h1>
     	<p id="name" class="title-center"><i id="icon" class="far fa-user"></i>{{article.author|title}} </i> </p>
@@ -28,5 +28,4 @@
     	</div>
 
 </section>    
-
 {% endblock content%}
