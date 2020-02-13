@@ -91,9 +91,15 @@ def contribute_to_article(request, article_id):
             changed_article = form.save(commit=False)
             contribution = Contribution.objects.create(user=request.user, article=article)
             Change.objects.create(new_content=changed_article.content, contribution=contribution)
-            # change to my-contributions-list later
-            return redirect('article-details', article_id)
+            return redirect('my-contributions-list')
 
     context = {"form":form, "article":article}
     return render(request, 'contribute_to_article.html', context)
+
+
+def my_contributions_list(request):
+    if request.user.is_anonymous:
+        return redirect('login')
+
+    return render(request, "my_contributions_list.html")
 

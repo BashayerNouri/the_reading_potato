@@ -35,6 +35,7 @@ urlpatterns = [
     path('edit/<int:article_id>', views.edit_article, name="edit-article"),
     path('my-articles/', views.my_articles_list, name="my-articles-list"),
     path('contribute/<article_id>/', views.contribute_to_article, name="contribute-to-article"),
+    path('my-contributions/', views.my_contributions_list, name="my-contributions-list"),
 ]
 
 
