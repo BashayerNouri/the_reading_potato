@@ -17,14 +17,13 @@ def articles_list(request):
     paginator = Paginator(articles, 5) # Shows up to 5 articles per page
     page = request.GET.get('page')
     try:
-        articles = paginator.page(page)
+        article = paginator.page(page)
     except PageNotAnInteger:
-        articles = paginator.page(1)
+        article = paginator.page(1)
     except EmptyPage:
-        articles = paginator.page(paginator.num_pages)
+        article = paginator.page(paginator.num_pages)
     context = {
-        "articles" : articles,
-        "page" : page,
+        "articles" : article,
     }
     return render(request, "articles_list.html", context)
 
