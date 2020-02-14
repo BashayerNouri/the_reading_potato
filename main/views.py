@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, redirect
 from .forms import ArticleForm, ContributeArticleForm
@@ -25,11 +26,17 @@ def articles_list(request):
 
 
 def article_details(request, article_id):
-	article = Article.objects.get(id=article_id)
-	context = { 
-	"article" : article,
-	}
-	return render(request, 'article_details.html', context)
+    article = Article.objects.get(id=article_id)
+    if settings.DEBUG:
+        contributions = article.contributions.filter(status=Contribution.ACCEPTED)
+    else:
+        contributions = article.contributions.filter(status=Contribution.ACCEPTED).distinct('user')
+
+    context = {
+        "article": article,
+        "contributions": contributions,
+        }
+    return render(request, "article_details.html", context)
 
 
 def create_article(request):

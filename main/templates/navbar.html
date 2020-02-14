@@ -6,6 +6,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       {% if request.user.is_authenticated %}
+      <li class="nav-item nav-link active">Hi, {{ user.get_username }}</li>
       <li class="nav-item">
         <a class="nav-link" href="{% url 'create-article' %}">Create</a>
       </li>
