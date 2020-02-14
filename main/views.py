@@ -27,6 +27,7 @@ def articles_list(request):
 
 def article_details(request, article_id):
     article = Article.objects.get(id=article_id)
+    # distinct() does not work with local databse, this will work with the deployement database.
     if settings.DEBUG:
         contributions = article.contributions.filter(status=Contribution.ACCEPTED)
     else:

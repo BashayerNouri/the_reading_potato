@@ -33,9 +33,11 @@
     <div id="details" class="container">
     	<h1 class="title-details">{{article.title}}</h1>
     	<p id="name" class="title-center"><i id="icon" class="far fa-user"></i>{{article.author|title}} </i> </p>
-    	<p id="name" class="title-center"><i id="icon" class="fas fa-users"></i>
+    	<p id="name" class="title-center"><i id="icon" class="fas fa-users"></i> contributed:
     	{% for contribution in contributions %}
-    		{{contribution.user.first_name}},
+    	{{contribution.user.first_name}}{% if not forloop.last %}, {% endif %}
+    	{% empty %}
+    	<tr><td>No one contributed to this article.</td></tr>
     	{% endfor %}
     	</p>
     	<p>{{article.content}}</p>
