@@ -9,8 +9,12 @@ import difflib
 # Create your views here.
 
 def articles_list(request):
-    article = Article.objects.all()
-    paginator = Paginator(article, 5) # Shows up to 5 articles per page
+    articles = Article.objects.all()
+    query = request.GET.get("q")
+    if query:
+        articles = articles.filter(title__contains=query)
+
+    paginator = Paginator(articles, 5) # Shows up to 5 articles per page
     page = request.GET.get('page')
     try:
         articles = paginator.page(page)
