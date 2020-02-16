@@ -4,12 +4,12 @@
 {% block content %}
 <section class="pt-3 pb-5" id="down">
     <div id="back" class="container">
-        <a href="{% url 'article-details' article.id %}">
+        <a href="{% url 'article-details' article.slug %}">
             <button type="button" class="btn btn-dark">Back To The Article</button>
         </a>
     </div>
 	<div class="container p-5">
-    <form action="{% url 'contribute-to-article' article.id %}" method="POST">
+    <form action="{% url 'contribute-to-article' article.slug %}" method="POST">
         {% csrf_token %}
         {{form|crispy}}
         <input type="submit" value="Contribute" class="btn btn-primary btn-sm btn-block">

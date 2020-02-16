@@ -6,7 +6,7 @@
 	<div id="border" class="container">
     {% for article in user.articles.all %}
     <li id="created" class="list-inline-item"><i id="icon" class="far fa-calendar-alt"></i>{{article.created_on|date:'d-M-Y'}}</li>
-    	<a href="{% url 'article-details' article.id %}">
+    	<a href="{% url 'article-details' article.slug %}">
     		<p id="user-list">{{ article.title }}</p>
     	</a>
     	<hr>
