@@ -1,6 +1,6 @@
   
    
-  <form action="{% url 'articles-list' %}" class="form-inline" method="GET">
-      <input class="form-control" type="search" placeholder="Search for articles" aria-label="Search" name="q" value="{{request.GET.q}}">
-      <button class="btn btn-dark" type="submit">Search</button>
+  <form action="{% url 'articles-list' %}" class="form-inline my-2 my-lg-0" method="GET" id="searchbar">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search for Articles" aria-label="Search" name="q" value="{{request.GET.q}}">
+      <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
   </form>
