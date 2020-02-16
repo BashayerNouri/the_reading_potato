@@ -23,6 +23,8 @@
                 </a>
                 <p id="content">{{article.content|truncatechars:250}}</p>
             </li>
+        {% empty %}
+                <li class="list-group-item"> No results found </li>
         {% endfor %}
         {% include 'paginator.html' with page=articles %}
     </ul>
