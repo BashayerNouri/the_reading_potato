@@ -9,7 +9,9 @@ import difflib
 # Create your views here.
 
 def articles_list(request):
+
     articles = Article.objects.all()
+
     query = request.GET.get("q")
     if query:
         articles = articles.filter(title__contains=query)
@@ -17,13 +19,14 @@ def articles_list(request):
     paginator = Paginator(articles, 5) # Shows up to 5 articles per page
     page = request.GET.get('page')
     try:
-        article = paginator.page(page)
+        articles = paginator.page(page)
     except PageNotAnInteger:
-        article = paginator.page(1)
+        articles = paginator.page(1)
     except EmptyPage:
-        article = paginator.page(paginator.num_pages)
+        articles = paginator.page(paginator.num_pages)
+
     context = {
-        "articles" : article,
+        "articles" : articles,
     }
     return render(request, "articles_list.html", context)
 
