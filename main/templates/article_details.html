@@ -14,7 +14,7 @@
 {% if request.user.is_authenticated and request.user == article.author %}
 		<div class="col">
 			<div id="edit" class="container">
-				<a href="{% url 'edit-article' article.id %}">
+				<a href="{% url 'edit-article' article.slug %}">
 					<button type="button" class="btn btn-warning">Edit This Article</button>
 				</a>
 			</div>		
@@ -23,7 +23,7 @@
 {% elif request.user.is_authenticated %}
 		<div class="col">
 			<div id="contribute" class="container">
-				<a href="{% url 'contribute-to-article' article.id %}">
+				<a href="{% url 'contribute-to-article' article.slug %}">
 					<button type="button" class="btn btn-danger">Contribute</button>
 				</a>
 			</div>		
