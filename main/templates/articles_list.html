@@ -18,7 +18,7 @@
                 <li id="author" class="list-inline-item"><i id="icon" class="far fa-user"></i>{{article.author|title}}</li>
                 <li id="created" class="list-inline-item"><i id="icon" class="far fa-calendar-alt"></i>{{article.created_on|date:'d-M-Y'}}</li> 
             </ul>
-                <a href="{% url 'article-details' article.id %}">
+                <a href="{% url 'article-details' article.slug %}">
                     <h4 class="title">{{article.title|title}}</h4>
                 </a>
                 <p id="content">{{article.content|truncatechars:250}}</p>
