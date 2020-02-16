@@ -8,15 +8,21 @@
 				<tr>
 					<th scope="col">Status</th>
 					<th scope="col">Article</th>
-					<th scope="col"></th>
+					<th scope="col">Date</th>
 				</tr>
 			</thead>
 			<tbody>
 				{% for contribution in request.user.contributions.all %}
 				<tr>
 					<td>
-						{{contribution.status}}
-					</td>
+					{% if contribution.status == 'Accepted' %}
+						<p class="green">{{contribution.status}}</p>
+					{% elif contribution.status == 'Pending' %}
+					    <p class="blue">{{contribution.status}}</p>
+					{% else %}	
+					    <p class="red">{{contribution.status}}</p>
+					{% endif %}	
+					</td>				
 					<td>
 						{{contribution.article}}
 					</td>

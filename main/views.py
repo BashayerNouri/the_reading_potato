@@ -1,20 +1,25 @@
-from django.conf import settings
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, redirect
+from django.conf import settings
+from django.db.models import Q 
+
 from .forms import ArticleForm, ContributeArticleForm
 from .models import Article, Contribution, Change
 
 import difflib
 
+
 # Create your views here.
 
 def articles_list(request):
-
     articles = Article.objects.all()
 
     query = request.GET.get("q")
     if query:
-        articles = articles.filter(title__contains=query)
+        articles = articles.filter(
+            Q(title__icontains=query)| 
+            Q(author__username__icontains=query)
+            ).distinct()
 
     paginator = Paginator(articles, 5) # Shows up to 5 articles per page
     page = request.GET.get('page')
@@ -135,7 +140,8 @@ def contribution_details(request, contribution_id):
         return redirect('articles-list')
 
     d = difflib.Differ()
-    comparison = list(d.compare(contribution.article.content.splitlines(True), contribution.change.new_content.splitlines(True)))
+    comparison = list(d.compare(contribution.article.content.splitlines(True), 
+        contribution.change.new_content.splitlines(True)))
 
     context = {
         "contribution" : contribution,

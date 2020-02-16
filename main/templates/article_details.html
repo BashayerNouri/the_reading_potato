@@ -15,7 +15,7 @@
 		<div class="col">
 			<div id="edit" class="container">
 				<a href="{% url 'edit-article' article.slug %}">
-					<button type="button" class="btn btn-warning">Edit This Article</button>
+					<button type="button" class="btn btn-outline-success">Edit This Article</button>
 				</a>
 			</div>		
 		</div>
@@ -31,16 +31,17 @@
 	</div>
 {% endif %}
     <div id="details" class="container">
-    	<h1 class="title-details">{{article.title}}</h1>
+    	<h2 class="title-details">{{article.title|title}}</h2>
     	<p id="name" class="title-center"><i id="icon" class="far fa-user"></i>{{article.author|title}} </i> </p>
-    	<p id="name" class="title-center"><i id="icon" class="fas fa-users"></i> contributed:
+    	<p>{{article.content}}</p>
+    	<hr>
+    	<p id="name" class="title-center"><i id="icon" class="fas fa-users"></i> Contributors:
     	{% for contribution in contributions %}
     	{{contribution.user.first_name}}{% if not forloop.last %}, {% endif %}
     	{% empty %}
     	<tr><td>No one contributed to this article.</td></tr>
     	{% endfor %}
     	</p>
-    	<p>{{article.content}}</p>
     	</div>
 
 </section>    

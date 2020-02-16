@@ -6,18 +6,15 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       {% if request.user.is_authenticated %}
-      <li class="nav-item nav-link active">Hi, {{ user.get_username }}</li>
+      <li class="nav-item nav-link active">Hi, {{ user.get_username|title }}</li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'create-article' %}">Create</a>
+        <a class="nav-link" href="{% url 'contributions-list' %}">Contributions</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'my-articles-list' %}">My Articles</a>
+        <a class="nav-link" href="{% url 'my-articles-list' %}">My Pages</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{% url 'my-contributions-list' %}">My Contributions</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'contributions-list' %}">Contributions</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{% url 'logout' %}">Logout</a>
@@ -34,4 +31,7 @@
     {% include 'searchbar.html' %}
   </div>
 </nav>
+  <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div>
 
