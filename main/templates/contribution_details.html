@@ -3,7 +3,9 @@
 {% block content %}
 
 <section class="pt-3 pb-5" id="down">
-<div class="container">
+    <h1 class="review"> Review Changes </h1>
+<div id="contribution-details" class="container">
+    <div class="contribution">
     {% for line in comparison %}
     	{% if not line|make_list|first == '?' %}
     		{% if line|make_list|first == '-' %}
@@ -14,13 +16,16 @@
     		{{line}}</p>
     	{% endif %}
     {% endfor %}
+    </div>
+    <div id="accept-decline" class="container">
     <a href="{% url 'accept-changes' contribution.id %}">
-        <button type="button" class="btn btn-success btn-block">Accept</button>
+        <button type="button" class="btn btn-outline-success btn-block">Accept</button>
     </a>
     <br>
     <a href="{% url 'decline-changes' contribution.id %}">
-        <button type="button" class="btn btn-danger btn-block">Decline</button>
+        <button type="button" class="btn btn-outline-danger btn-block">Decline</button>
     </a>
+    </div>
 </div>
 </section>
 {% endblock content%}

@@ -2,7 +2,7 @@
 
 {% block content %}
 <section class="pt-3 pb-5" id="down">
-	<div class="container">	
+	<div id="contribution-list" class="container">	
 		<table class="table">
 			<thead>
 				<tr>
@@ -22,10 +22,13 @@
 					</td>
 					<td>
 						<a href="{% url 'contribution-details' contribution.id %}">
-							<button type="button" class="btn btn-danger">Review</button>
+							<button type="button" class="btn btn-warning">Review</button>
 						</a>
 					</td>
-				</tr>
+					{% empty %}
+					<td class="contributed">
+						<h5> No one contributed to your articles yet. If you don't have any <a href="{% url 'create-article' %}"> create </a> now! </h5>
+					</td>
 				{% endfor %}
 			</tbody>
 		</table>

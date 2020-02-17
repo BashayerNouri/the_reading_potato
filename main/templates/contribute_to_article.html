@@ -12,7 +12,7 @@
     <form action="{% url 'contribute-to-article' article.slug %}" method="POST">
         {% csrf_token %}
         {{form|crispy}}
-        <input type="submit" value="Contribute" class="btn btn-primary btn-sm btn-block">
+        <input type="submit" value="Contribute" class="btn btn-danger btn-block">
     </form>
     </div>
 </section>
