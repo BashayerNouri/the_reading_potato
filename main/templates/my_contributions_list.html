@@ -29,6 +29,10 @@
 					<td>
 						{{contribution.date}}
 					</td>
+					{% empty %}
+					<td class="contributed">
+						<h5> You did not contribut to any article yet. </h5>
+					</td>
 				</tr>
 				{% endfor %}
 			</tbody>

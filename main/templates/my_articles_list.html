@@ -10,6 +10,8 @@
     		<p id="user-list">{{ article.title }}</p>
     	</a>
     	<hr>
+    {% empty %}
+    <h5 class="my-articles"> You didn't publish any articles yet. </h5>
     {% endfor %}
 </div>
  </section>
